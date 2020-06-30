@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#slider, ul, a {
+    width: 600px;
+    height: 400px;
+}
+
+#slider {
+    position: absolute;
+    border: 2px solid black;
+    /*padding: 3px;*/
+    margin: 10px 0 0 10px;
+    overflow: hidden;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+
+ul {
+    position: absolute;
+    list-style-type: none;
+    width: 6000px;
+    /*transition-duration: 0.3s;*/
+}
+
+li {
+    float: left;
+}
+
+a {
+    display: inline-block;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+#slider:hover .arrow-container{
+    display: block;
+}
+.arrow-container {
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    top: 50%;
+    margin-top: -25px;
+    display: none;
+}
+
+.arrow-container span {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    font-size: 40px;
+    /*display: inline-block;*/
+    text-align: center;
+    line-height: 50px;
+    background: rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+.left-arrow {
+    left: 0px;
+    cursor: pointer;
+}
+
+.right-arrow {
+    right: 0px;
+    cursor: pointer;
+}
+
+.indicator-container {
+    position: absolute;
+    width: 150px;
+    height: 30px;
+    line-height: 30px;
+    bottom: 0;
+    left: 50%;
+    margin-left: -75px;
+    text-align: center;
+}
+
+.indicator {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    background: white;
+    cursor: pointer;
+}
+
+.indicator.active {
+    background: red;
+}
