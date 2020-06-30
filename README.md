@@ -1,2 +1,2 @@
 # Auto Scrolling Image Slider
-![AutoImageSlider](slider.gif "AutoImageSlider")
+![AutoImageSlider](https://img-blog.csdnimg.cn/20200701004633255.gif#pic_center)
