@@ -73,7 +73,7 @@ function animate(element, target) {
         clearInterval(intervalId);
         setCurrentActiveIndicator(curIndex);
         intervalId = setInterval(function () {
-            if (Math.abs(element.offsetLeft + step) < Math.abs(target)) {
+            if ((step < 0) && (Math.abs(element.offsetLeft + step) < Math.abs(target))) {
                 element.style.left = element.offsetLeft + step + "px";
             } else {
                 if (Math.abs(target - element.offsetLeft) > Math.abs(step)) {
