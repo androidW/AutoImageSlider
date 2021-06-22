@@ -11,7 +11,7 @@ var indicator_container;
 var slider_item_width;
 var curIndex = 0;
 
-window.onload = function() {
+window.onload = function () {
     initElement();
     initEvent();
     if (autoplay) {
@@ -22,12 +22,12 @@ window.onload = function() {
 function initElement() {
     slider = document.getElementById("slider");
     slider_items = slider.getElementsByTagName("li");
-    slider_item_container = slider.getElementsByClassName("slieder-item-container")[0];
+    slider_item_container = slider.getElementsByClassName("slider-item-container")[0];
     indicator_container = slider.getElementsByClassName("indicator-container")[0];
-    
+
     var firstItem = slider_items[0].cloneNode(true);
     slider_item_container.appendChild(firstItem);
-    
+
     slider_item_width = slider_items[0].offsetWidth;
 }
 
@@ -40,7 +40,7 @@ function initEvent() {
         autoplay = true;
         startAnimation(slider_item_container);
     });
-    
+
     var indicators = indicator_container.children;
     for (var i = 0; i < indicators.length; i++) {
         indicators[i].setAttribute("index", i);
@@ -49,7 +49,7 @@ function initEvent() {
             next(index);
         });
     }
-    
+
     var left_arrow = slider.getElementsByClassName("left-arrow")[0];
     var right_arrow = slider.getElementsByClassName("right-arrow")[0];
     left_arrow.addEventListener("click", function () {
@@ -96,25 +96,25 @@ function prev() {
     var li = element.children;
     curIndex = curIndex - 1;
     if (curIndex < 0) {
-        element.style.left = -((li.length-1)*slider_item_width) + "px";
-        curIndex = li.length-2;
+        element.style.left = -((li.length - 1) * slider_item_width) + "px";
+        curIndex = li.length - 2;
     }
-    animate(element, -(curIndex*slider_item_width));
+    animate(element, -(curIndex * slider_item_width));
 }
 
 function next(nextIndex) {
     var element = slider_item_container;
     var li = element.children;
-    if ((nextIndex != null) && (typeof(nextIndex) != "undefined")) {
+    if ((nextIndex != null) && (typeof (nextIndex) != "undefined")) {
         curIndex = nextIndex;
     } else {
         curIndex = curIndex + 1;
-        if (curIndex > (li.length-1)) {
+        if (curIndex > (li.length - 1)) {
             element.style.left = 0 + "px";
             curIndex = 1;
         }
     }
-    animate(element, -(curIndex*slider_item_width));
+    animate(element, -(curIndex * slider_item_width));
 }
 
 function startAnimation(element) {
